@@ -7,3 +7,7 @@
 4.	MT3608
 При виявленні помилок, або пропозицій прошу писати в <a href="https://t.me/ed_ryb1">особисті</a><br>
 <strong color="red">Увага Пристрої я не збираю навіть як що дуже треба!!!</strong>
+ШО КУДИ тикати:
+<a href="https://github.com/edwardrybka/FPV_DETECTED_1.2_5.8GHZ/blob/main/FPV_DETECTED.pdf">ПДФ с полной распиновкой</a>
+Приклад:
+<img src="https://github.com/edwardrybka/FPV_DETECTED_1.2_5.8GHZ/blob/main/photo_1.jpg?raw=true">
