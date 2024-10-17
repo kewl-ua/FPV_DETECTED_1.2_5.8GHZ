@@ -40,7 +40,6 @@ class VRX58 {
       
     }
     void loops(){
-      delay(20);
       if(!isVideo(100)){
         _index_chanel++;
         if(_index_chanel > 55){
@@ -50,11 +49,18 @@ class VRX58 {
       }
     }
     bool isVideo(int delays){
-      float dat = calc(_pin, delays);
-      Serial.println(dat);
-      if(dat > 100){
-        _isVideo58 = true;
-        return true;
+      int rss = getRSSI();
+      if(rss > 55){
+        float dat = calc(_pin, delays);
+        if(dat > 100 && dat < 230){
+  
+          
+          _isVideo58 = true;
+          return true;
+        }else{
+          _isVideo58 = false;
+          return false;
+        } 
       }else{
         _isVideo58 = false;
         return false;
@@ -79,8 +85,8 @@ class VRX58 {
       }
        return dat/i;
     }
-    int getRSSI58(){
-      return map(analogRead(_PIN_RSSI), 0, 1200, 0, 100);
+    int getRSSI(){
+      return map(analogRead(_PIN_RSSI), 0, 360, 0, 100);
     }
     void setChanel(uint8_t index){
         _index_chanel = index;
@@ -96,6 +102,11 @@ class VRX58 {
     uint32_t getChanel(){
    
       return _frequencyTable[_index_chanel];
+    }
+    void nextChanel(){
+      _isVideo58 = false;
+      _index_chanel++;
+      setChanel(_index_chanel);
     }
   // список членов, доступных в программе
   private:
