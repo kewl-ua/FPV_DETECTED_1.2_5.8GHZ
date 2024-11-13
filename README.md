@@ -4,7 +4,7 @@
 <strong>Потребление схемы до 1.5W (250mAh/5V)</strong><br>
 1.	Raspberry Pi Pico
 2.	RX5808
-3.	TA8804
+3.	TA8804 (<a href="https://www.olx.ua/d/uk/obyavlenie/vdeopriymach-tv-tyuner-ta8804f-1-2-1-3-1-5ggts-vrx-920-1680mgts-IDWtqF1.html">ТУТ можно купити</a>)
 4.	MT3608
 <br>
 При виявленні помилок, або пропозицій прошу писати в <a href="https://t.me/ed_ryb1">особисті</a><br>
