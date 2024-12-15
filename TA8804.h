@@ -13,17 +13,17 @@ class TA8804 {
 
     bool begin();
     bool isVideo(int delays);
-    int GetFrequency();
+    int getFrequency();
     void loops();
   private:
-    unsigned int _Delitel;
-    byte _DelitelH;
-    byte _DelitelL;
+    unsigned int _div;
+    byte _divH;
+    byte _divL;
     int _pin;
     int _status;
     byte _addr;
 
-    bool SetFrequency(uint16_t f);
+    bool setFrequency(uint16_t f);
     float calc(int pin, int delays);
 };
 
@@ -36,7 +36,7 @@ TA8804::TA8804(int pin) {
 }
 
 bool TA8804::begin() {
-  return SetFrequency(_fs);
+  return setFrequency(_fs);
 }
 
 bool TA8804::isVideo(int delays) {
@@ -45,7 +45,7 @@ bool TA8804::isVideo(int delays) {
   return dat > 165;
 }
 
-int TA8804::GetFrequency() {
+int TA8804::getFrequency() {
   return _fs;
 }
 
@@ -56,21 +56,21 @@ void TA8804::loops() {
 
   if (!isVideo(50)) {
       _fs += 10;
-      SetFrequency(_fs);
+      setFrequency(_fs);
       _isVideo = false;
   } else {
     _isVideo = true;
   }
 }
 
-bool TA8804::SetFrequency(uint16_t f) {
-  _Delitel = f * 8 + 3836; //считаем делитель
-  _DelitelH = _Delitel >> 8;
-  _DelitelL = _Delitel & 0XFF;
+bool TA8804::setFrequency(uint16_t f) {
+  _div = f * 8 + 3836; // считаем делитель
+  _divH = _div >> 8;
+  _divL = _div & 0XFF;
 
-  Wire.beginTransmission(_addr);   // стучимся к синтезатору и передаем байты параметров
-  Wire.write(_DelitelH);
-  Wire.write(_DelitelL);
+  Wire.beginTransmission(_addr); // стучимся к синтезатору и передаем байты параметров
+  Wire.write(_divH);
+  Wire.write(_divL);
   Wire.write(0xCE);
   Wire.write(0x00);
 
@@ -85,14 +85,14 @@ float TA8804::calc(int pin, int delays) {
   int newVal = 0;
   float dat = 0;
 
-  while (d){
+  while (d) {
     newVal = analogRead(pin);
 
     if (newVal > 300 && newVal < 600) {
       dat += 0.20;
     }
 
-    if(millis() - times  >= delays) {
+    if(millis() - times >= delays) {
       d = 0;
     }
   }

@@ -52,9 +52,9 @@ void loop() {
   D1306.loops(tuner._fs, tuner._isVideo, vrx5808.getChanel(), vrx5808._isVideo58);
 
   if (vrx5808._isVideo58 || tuner._isVideo) {
-    digitalWrite(10, HIGH);
+    digitalWrite(OUTPUT_PIN, HIGH);
   } else {
-    digitalWrite(10, LOW);
+    digitalWrite(OUTPUT_PIN, LOW);
   }
   //  Serial.println(isVideo(28,50));
 }
