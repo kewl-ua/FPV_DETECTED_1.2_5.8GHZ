@@ -25,10 +25,10 @@
 ## **Збірка через Platform IO**
 
 ### ***Встанлюємо залежності***
-``` pio lib install ```
+``` platformio lib install ```
 
 ### **Збираємо прошивку**
-``` pio run ```
+``` platformio run ```
 
 ### ***Підключаємо R Pi Pico та завантажуємо прошивку***
-``` pio run --target upload ```
+``` platformio run --target upload ```
