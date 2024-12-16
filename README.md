@@ -1,5 +1,7 @@
-<B>FPV DETECTED 1.2GHZ 5.8GHZ</B></br>
-Цей прилад дозволяє виявити наближення FPV, дистанція залежи від місцевості при потужності 200mv та 1,8 метра від землі в полі 1.6 км шо дозволе зе***ся. <br>
+# FPV DETECTED 1.2GHZ 5.8GHZ
+
+Цей прилад дозволяє виявити наближення FPV, дистанція залежи від місцевості при потужності 200mv та 1,8 метра від землі в полі 1.6 км шо дозволе зе***ся. 
+
 <strong>Прилад складається з:</strong> <br>
 <strong>Потребление схемы до 1.5W (250mAh/5V)</strong><br>
 1.	Raspberry Pi Pico
@@ -13,3 +15,15 @@
 <a href="https://github.com/edwardrybka/FPV_DETECTED_1.2_5.8GHZ/blob/main/FPV_DETECTED.pdf">ПДФ с полной распиновкой</a><br>
 Приклад:
 <img src="https://github.com/edwardrybka/FPV_DETECTED_1.2_5.8GHZ/blob/main/photo_1.jpg?raw=true">
+
+
+## **Збірка через Platform IO**
+
+### ***Встанлюємо залежності***
+``` pio lib install ```
+
+### **Збираємо прошивку**
+``` pio run ```
+
+### ***Підключаємо R Pi Pico та завантажуємо прошивку***
+``` pio run --target upload ```
