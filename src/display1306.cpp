@@ -24,11 +24,11 @@ void Display1306::viewsErrors(String text, int starts, int stops, int sizes) {
 void Display1306::loops(int fs, bool isVideo, uint32_t fs58, bool isVideo58) {
   display.clearDisplay();
 
-  for (int i = 0; i <= 64; i++){
+  for (int i = 0; i <= 64; i++) {
       viewText(".", 60, i, 1);
   }
 
-  for (int i = 0; i <= 120; i++){
+  for (int i = 0; i <= 120; i++) {
       viewText(".", i, 15, 1);
   }
 
